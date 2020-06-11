@@ -9,7 +9,8 @@ class SensorPi(Model):
         # Specifies the region
 
         region = 'eu-west-1'
-
+        aws_access_key_id = "foo"
+        aws_secret_access_key = "bar"
         # Optional: Specify the hostname only if it needs to be changed from the default AWS setting
         # host = 'https://dynamodb.eu-west-1.amazonaws.com/'
         # Specifies the write capacity
