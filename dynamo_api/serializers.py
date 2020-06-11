@@ -1,14 +1,16 @@
 from rest_framework import serializers
-from .models import PowerConsumption
+from .models import SensorPi
 
-class PowerConsumptionSerializer(serializers.Serializer):
+class SensorPiSerializer(serializers.Serializer):
     class meta:
-        model = PowerConsumption
-        fields = ['date_time', 'power']
+        model = SensorPi
+        fields = ['DateTime', 'load1','load2', 'load3', 'load4']
 
     def to_representation(self, instance):
-        serialized_data = super(PowerConsumptionSerializer,self).to_representation(instance)
-        serialized_data['date'] = instance.date_time
-        serialized_data['power'] = instance.power
+        serialized_data = super(SensorPiSerializer,self).to_representation(instance)
+        serialized_data['date'] = instance.DateTime
+        serialized_data['load1'] = instance.load1
+        serialized_data['load2'] = instance.load2
+        serialized_data['load3'] = instance.load3
+        serialized_data['load4'] = instance.load4
         return serialized_data
-

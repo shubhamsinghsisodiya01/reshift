@@ -1,6 +1,6 @@
-from .views import home, PowerConsumptionViewSet
+from .views import home, SensorPiViewSet
 from django.urls import path
 urlpatterns = [
     path('',home),
-    path('details',PowerConsumptionViewSet.as_view({'get': 'list'}), name="get_details")
+    path('details',SensorPiViewSet.as_view({'get': 'list'}), name="get_details")
 ]
